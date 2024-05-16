@@ -13,7 +13,33 @@
     <button class="removeItem">Remove from cart</button>
 
     <script>
-        
+        const showQuantity =  document.querySelector(".showQuantity");
+        const addToCart =  document.querySelector(".addToCart");
+        const add2 =  document.querySelector(".add2");
+        const add3 =  document.querySelector(".add3");
+        const removeItem =  document.querySelector(".removeItem");
+
+        let cartQuantity = 0;
+
+        showQuantity.addEventListener("click", function(){
+            console.log(`Cart Quantity : ${cartQuantity}`);
+        });
+        addToCart.addEventListener("click", function(){
+            cartQuantity++;
+            console.log(`Cart Quantity : ${cartQuantity}`);
+        });
+        add2.addEventListener("click", function(){
+            cartQuantity+=2;
+            console.log(`Cart Quantity : ${cartQuantity}`);
+        });
+        add3.addEventListener("click", function(){
+            cartQuantity+=3;
+            console.log(`Cart Quantity : ${cartQuantity}`);
+        });
+        removeItem.addEventListener("click", function(){
+            cartQuantity--;
+            console.log(`Cart Quantity : ${cartQuantity}`);
+        });
     </script>
 </body>
 </html>
