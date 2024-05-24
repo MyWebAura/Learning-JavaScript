@@ -28,6 +28,9 @@
         console.log(product);
 
         delete product.isAvailable;
+
+        console.log(JSON.stringify(product));
+        console.log(JSON.parse(JSON.stringify(product)));
     </script>
 </body>
 
