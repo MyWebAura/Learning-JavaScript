@@ -34,12 +34,13 @@
         score.wins = 0 ;
         score.ties = 0 ;
         score.losses = 0 ;
+        localStorage.removeItem('score');
         ">
-        Reset score
+            Reset score
         </button>
 
         <script>
-            const score = {
+            const score = JSON.parse(localStorage.getItem("score")) || {
                 wins: 0,
                 ties: 0,
                 losses: 0
@@ -80,7 +81,7 @@
                 } else if (result === 'You Loose!') {
                     score.losses += 1;
                 }
-                localStorage
+                localStorage.setItem("score", JSON.stringify(score));
                 alert(`You picked ${playerMove} and Computer picked ${computerMove} and ${result}
 Wins: ${score.wins} Ties: ${score.ties} Looses: ${score.losses}`);
             }
