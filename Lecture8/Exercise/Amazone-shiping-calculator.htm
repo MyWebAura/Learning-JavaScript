@@ -21,6 +21,14 @@
         const calBtn = document.querySelector('.cal-btn');
         const result = document.querySelector('.result');
         calBtn.addEventListener("click", () => {
+            calculateTotal();
+        });
+        inputBox.addEventListener("keydown" , (event)=>{
+            if(event.key === "Enter"){
+                calculateTotal();
+            }
+        })
+        function calculateTotal(){
             let cost =Number(inputBox.value);
             if (cost < 40) {
                 cost += 10;
@@ -30,7 +38,7 @@
                 result.innerText = `FREE Shipping
     Grand Total = $${cost}`;
             }
-        });
+        }
     </script>
 </body>
 
