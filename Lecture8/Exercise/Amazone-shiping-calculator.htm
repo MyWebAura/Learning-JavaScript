@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shipment Cost Calculator</title>
 </head>
+
 <body>
-    
+    <h1>Amazone Shipping Calculator</h1>
+    <p>Orders over $40 = +$10 shipping</p>
+    <p>Orders under $40 = FREE shipping</p>
+    <input type="text" class="input-box">
+    <button class="cal-btn">Calculate</button>
+    <p class="result"></p>
+
+
+    <script>
+        const inputBox = document.querySelector('.input-box');
+        const calBtn = document.querySelector('.cal-btn');
+        const result = document.querySelector('.result');
+        calBtn.addEventListener("click", () => {
+            let cost =Number(inputBox.value);
+            if (cost < 40) {
+                cost += 10;
+                result.innerText = `Shipping Cost = $10
+                Grand Total = $${cost}`;
+            } else {
+                result.innerText = `FREE Shipping
+    Grand Total = $${cost}`;
+            }
+        });
+    </script>
 </body>
+
 </html>
