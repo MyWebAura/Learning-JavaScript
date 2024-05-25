@@ -30,23 +30,31 @@
         <button onclick="  playGame('scissors'); ">
             Scissors
         </button>
-        <p class="results">jgf</p>
-        <p class="scores">jf</p>
+        <p class="moves"></p>
+        <p class="results"></p>
+        <p class="scores"></p>
         <button onclick="
         score.wins = 0 ;
         score.ties = 0 ;
         score.losses = 0 ;
         localStorage.removeItem('score');
+        updateScore();
+        moves.innerHTML = '';
+        results.innerHTML = '';
         ">
             Reset score
         </button>
 
         <script>
+            const scores = document.querySelector(".scores");
+            const moves = document.querySelector(".moves");
+            const results = document.querySelector(".results");
             const score = JSON.parse(localStorage.getItem("score")) || {
                 wins: 0,
                 ties: 0,
                 losses: 0
             };
+            updateScore();
             function playGame(playerMove) {
                 const computerMove = pickComputerMove();
                 let result = '';
@@ -84,10 +92,15 @@
                     score.losses += 1;
                 }
                 localStorage.setItem("score", JSON.stringify(score));
-                alert(`You picked ${playerMove} and Computer picked ${computerMove} and ${result}
-Wins: ${score.wins} Ties: ${score.ties} Looses: ${score.losses}`);
+                // alert(`You picked ${playerMove} and Computer picked ${computerMove} and ${result}
+                // Wins: ${score.wins} Ties: ${score.ties} Looses: ${score.losses}`);
+                moves.innerHTML = `You picked ${playerMove} and Computer picked ${computerMove}`;
+                results.innerHTML = result;
+                updateScore();
             }
-
+            function updateScore() {
+                scores.innerHTML = `Wins: ${score.wins} Losses: ${score.losses} Ties: ${score.ties}`;
+            }
             function pickComputerMove() {
                 const randomNumber = Math.random();
                 let computerMove = '';
