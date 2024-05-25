@@ -29,14 +29,14 @@
             }
         })
         function calculateTotal(){
-            let cost =Number(inputBox.value);
-            if (cost < 40) {
-                cost += 10;
+            let cost =Number(inputBox.value) *100;
+            if (cost < 4000) {
+               cost += 1000;
                 result.innerText = `Shipping Cost = $10
-                Grand Total = $${cost}`;
+                Grand Total = $${cost/100}`;
             } else {
                 result.innerText = `FREE Shipping
-    Grand Total = $${cost}`;
+    Grand Total = $${cost/100}`;
             }
         }
     </script>
