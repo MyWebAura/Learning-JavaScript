@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(25 , 25 , 25);
+    text-align: center;
+    color: white;
+}
+h2{
+    margin-block: 20px;
+}
+.move-btn{
+    margin-top: 10px;
+    margin-left: 20px;
+    border: 2px solid white;
+    padding: 20px;
+    border-radius: 100%;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.19s ;
+}
+.move-btn:hover{
+    background-color: rgba(128, 128, 128, 0.265);
+}
+img{
+    width: 60px;
+}
+.reset-btn{
+    padding-inline: 20px;
+    padding-block: 10px;
+    border-radius: 6px;
+    border: 1px solid white;
+    cursor: pointer;
+    transition: all ease-in-out 0.19s ;
+}
+.reset-btn:hover{
+    background-color: transparent;
+    color: white;
+}
+.moves{
+    
+}
