@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Projects</title>
+    <style>
+        .red-bg{
+            background-color: red !important;
+            border: none;
+        }
+        .sub-btn{
+            background-color: black;
+            border-radius: 19px;
+            width: 8em;
+            height: 3em;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>YouTube Subscribe Button</h2>
+    <button class="sub-btn">Subscribe</button>
+    
+    <script>
+        const subBtn = document.querySelector(".sub-btn");
+        subBtn.addEventListener("click", () => {
+            if(subBtn.innerText === "Subscribe"){
+                subBtn.innerHTML = "Subscribed";
+                subBtn.classList.add("red-bg");
+            }else{
+                subBtn.innerHTML = "Subscribe";
+                subBtn.classList.remove("red-bg");
+            }
+        });
+    </script>
+</body>
+</html>
